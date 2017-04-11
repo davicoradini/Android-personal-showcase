@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Showcase</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
+    <string name="tv_simple_progressbar">Simple ProgressBar</string>
+    <string name="nav_loaders">Loaders</string>
+    <string name="wang_avloadingindicator">Wang Loading</string>
+    <string name="tv_skyfishjy_loader">Skyfishjy Ripple Background</string>
 </resources>
