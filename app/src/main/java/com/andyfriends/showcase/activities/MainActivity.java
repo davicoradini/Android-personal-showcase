@@ -14,7 +14,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.andyfriends.showcase.R;
+import com.andyfriends.showcase.fragments.LoadersMainFragment;
+import com.andyfriends.showcase.util.NavigationUtils;
 
+/**
+ * Main Activity / App's first view
+ */
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -42,6 +47,12 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        NavigationUtils.setNavHeaderView(navigationView);
+        NavigationUtils.toggleInternetActivity(this, false);
+
+        //TODO check this
+        NavigationUtils.openFragment(this, LoadersMainFragment.class, true);
     }
 
     @Override
@@ -56,19 +67,14 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -79,11 +85,12 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
+        if (id == R.id.nav_loaders) {
+
+            NavigationUtils.openFragment(this, LoadersMainFragment.class, true);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -8,9 +8,31 @@
     tools:context="com.andyfriends.showcase.activities.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!--TODO Feedback-->
+    <LinearLayout
+        android:id="@+id/lFeedback"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:orientation="vertical" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/lFeedback">
+
+        <FrameLayout
+            android:id="@+id/flMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/pgMain"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:indeterminate="true"
+            android:visibility="visible" />
+
+    </FrameLayout>
 
 </RelativeLayout>
